@@ -10,8 +10,10 @@ public class GameOver : MonoBehaviour {
 		
 	}
 	
+
 	// Update is called once per frame
 	void Update () {
+        //スペースキーを押したらプレイ画面にロードする
         if (Input.GetKeyDown("space"))
         {
             SceneManager.LoadScene("MainScene");

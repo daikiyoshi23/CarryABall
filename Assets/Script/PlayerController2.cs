@@ -23,11 +23,6 @@ public class PlayerController2 : MonoBehaviour
 
     public GameObject SeeSaw;
 
-
-    private Rigidbody PlayerRigid;
-
-
-
     // Use this for initialization
     void Start()
     {
@@ -35,10 +30,6 @@ public class PlayerController2 : MonoBehaviour
         anim = GetComponent<Animator>();
         ltarget = lefttarget.GetComponent<Transform>();
         rtarget = righttarget.GetComponent<Transform>();
-        
-        PlayerRigid = this.transform.GetComponent<Rigidbody>();
-
-
     }
 
     // Update is called once per frame
