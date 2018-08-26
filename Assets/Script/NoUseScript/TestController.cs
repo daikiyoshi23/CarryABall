@@ -21,13 +21,13 @@ public class TestController : MonoBehaviour {
     {
         System.Diagnostics.ProcessStartInfo info = new System.Diagnostics.ProcessStartInfo();
 
-        // 実行ファイル名ー。
+        // 実行ファイル名
         info.FileName = m_fileName;
-        // 実行フォルダーー。StreamingAssetsフォルダ内だよー。
+        // 実行フォルダ
         info.WorkingDirectory = string.Format(@"{0}\{1}", Application.streamingAssetsPath, m_directory);
-        // 実行ファイルに渡す引数ー。
+        // 実行ファイルに渡す引数
         info.Arguments = m_arguments;
-        // 実行ファイルを隠すか普通に表示するかー。
+        // 実行ファイルを隠すか普通に表示するか
         info.WindowStyle = m_hidden ? System.Diagnostics.ProcessWindowStyle.Hidden : System.Diagnostics.ProcessWindowStyle.Normal;
 
         try
@@ -48,18 +48,17 @@ public class TestController : MonoBehaviour {
             return;
         }
 
-        // まだプロセスが閉じていないなら、強制的にさようならだ。
+        // まだプロセスが閉じていないなら、強制的に消す
         if (!m_process.HasExited)
         {
             m_process.Kill();
         }
 
-        // Dispose メソッドは Close を呼び出します。 配置すること、 Process 内のオブジェクト、 using ブロックを呼び出すことがなくリソースを破棄 Closeします。
+        // Dispose メソッドは Close を呼び出します。 配置すること、 Process 内のオブジェクト、 using ブロックを呼び出すことがなくリソースを破棄 Closeする
         // MSDNには上記のようにDispose()内でClose()を呼ぶらしいから、Dispose()だけでいいと思っているんだけど、
         // Close()とDispose()を連続で呼んでいる、コードを見たことあるんだよなぁ。
-        // どうするのが一番正しいのかなぁ。
 
-        // m_process.Close();
+        
         m_process.Dispose();
 
         m_process = null;

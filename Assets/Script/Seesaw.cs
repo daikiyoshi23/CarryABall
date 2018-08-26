@@ -13,11 +13,13 @@ public class Seesaw : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        //PlayerStageのSeeSawの傾きに合わせて、ステージのSeeSawを傾ける
         Transform katamuki = playerStage.GetComponent<Transform>();
 
+        //Z軸を軸とした傾きの情報を取得する
         float kakudo = katamuki.transform.localEulerAngles.z    ;
 
+        //各ステージに反映させる
         transform.rotation = Quaternion.Euler(0, 0, kakudo);
 		
 	}

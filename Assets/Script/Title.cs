@@ -12,6 +12,8 @@ public class Title : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //スペースキーを押したらMainSceneにロード
         if (Input.GetKeyDown("space"))
         {
             SceneManager.LoadScene("MainScene");
