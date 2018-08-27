@@ -10,7 +10,6 @@ public class Warp : MonoBehaviour {
     private void Start()
     {
         //ワープポイント先の場所情報を取得
-        WarpPoint.GetComponent<Transform>();
     }
 
 
@@ -19,7 +18,7 @@ public class Warp : MonoBehaviour {
         //ボールタグのオブジェクトが触れた場合、ワープポイント先へ飛ばす
         if(other.tag == "Ball")
         {
-            Transform others = other.GetComponent<Transform>();
+            Transform others = other.transform;
             others.transform.position = WarpPoint.transform.position;
         }
     }
